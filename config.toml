@@ -1,0 +1,44 @@
+[network]
+chain_id = 1
+rpc_urls = [
+  "https://ethereum.publicnode.com",
+  "https://eth.llamarpc.com",
+  "https://1rpc.io/eth",
+]
+
+[gas]
+max_gas_price_gwei = 500.0
+min_gas_price_gwei = 1.0
+replacement_bump_percent = 15.0
+
+[profit]
+min_profit_percent = 15.0
+min_tx_value_eth = 0.1
+
+[safety]
+circuit_breaker_enabled = true
+max_consecutive_failures = 5
+max_daily_spend_eth = 1.0
+emergency_stop = false
+
+[logging]
+level = "info"
+log_file = "logs/gas-auction-bot.log"
+json_log_enabled = true
+
+[analysis]
+slippage_bps = 50
+max_risk_score = 70
+base_liquidity_eth = 100.0
+max_queue_size = 256
+
+[execution]
+confirmation_timeout_secs = 60
+replacement_poll_interval_secs = 5
+soft_gas_cap_ratio = 0.8
+
+[server]
+bind_address = "0.0.0.0:9090"
+worker_count = 8
+network_cache_ttl_secs = 12
+shutdown_drain_secs = 10
